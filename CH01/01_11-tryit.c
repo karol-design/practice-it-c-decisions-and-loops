@@ -2,17 +2,42 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main()
-{
-	int card;
+#define VAL_ACE 9
+#define VAL_JACK 10
+#define VAL_QUEEN 11
+#define VAL_KING 12
 
-	/* seed the randomizer */
-	srand( (unsigned)time(NULL) );
+int main() {
+  int card;
 
-	/* grab a random card, 13 to a suit */
-	card = rand() % 13;		/* range is 0 to 12 */
+  /* seed the randomizer */
+  srand((unsigned)time(NULL));
 
-	printf("You drew card %d\n",card);
+  /* grab a random card, 13 to a suit */
+  card = rand() % 13; /* range is 0 to 12 */
 
-	return(0);
+  switch (card) {
+    case VAL_ACE: {
+      printf("You drew card: Ace\n", card);
+      break;
+    }
+    case VAL_JACK: {
+      printf("You drew card: Jack\n", card);
+      break;
+    }
+    case VAL_QUEEN: {
+      printf("You drew card: Queen\n", card);
+      break;
+    }
+    case VAL_KING: {
+      printf("You drew card: King\n", card);
+      break;
+    }
+    default: {
+      printf("You drew card: %d\n", card - 1);
+      break;
+    }
+  }
+
+  return (0);
 }
