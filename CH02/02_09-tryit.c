@@ -1,11 +1,19 @@
 #include <stdio.h>
 
-int main()
-{
-	int x;
-	char a;
+#define MATRIX_ROWS 10
+#define MATRIX_COLUMNS 10
+#define ELEMENT_SIZE 3
 
-	puts("Grid example");
+int main() {
+  char character;
 
-	return(0);
+  for (int i = 0; i < MATRIX_ROWS; i++) {
+    character = 'A';
+    for (int j = 0; j < MATRIX_COLUMNS; j++) {
+      printf("%d%c\t", i, character++);
+    }
+    printf("\n");
+  }
+
+  return (0);
 }
